@@ -1,2 +1,4 @@
 KataLibrary
 ===========
+
+* FizzBuzz
