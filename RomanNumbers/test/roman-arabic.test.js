@@ -26,47 +26,23 @@ test("Matching all Roman Numerals", function(){
 	equal(Convert.toArabic('M'), 1000, "M should return 1000");
 });
 
-test("VI should return 6", function(){
-	equal(Convert.toArabic('VI'), 6);
+test("Multiples of X", function(){
+	equal(Convert.toArabic('XX'), 20, "XX should return 20");
+	equal(Convert.toArabic('XXX'), 30, "XXX should return 30");
 });
 
-test("VII should return 7", function(){
-	equal(Convert.toArabic('VII'), 7);
+
+test("When use only Additonal Operator", function(){
+	equal(Convert.toArabic('VI'), 6, "VI should return 6");
+	equal(Convert.toArabic('VII'), 7, "VII should return 7");
+	equal(Convert.toArabic('VIII'), 8, "VIII should return 8");
+	equal(Convert.toArabic('XI'), 11, "XI should return 11");
+	equal(Convert.toArabic('XII'), 12, "XII should return 12");	
+	equal(Convert.toArabic('XVII'), 17, "XVII should return 17");
 });
 
-test("VIII should return 8", function(){
-	equal(Convert.toArabic('VIII'), 8);
+test("When use only Subtraction Operator", function(){
+	equal(Convert.toArabic('XIV'), 14, "XIV should return 14");
+	equal(Convert.toArabic('IL'), 39, "IL should return 39");
+	equal(Convert.toArabic('XL'), 40, "XL should return 40");
 });
-
-test("XI should return 11", function(){
-	equal(Convert.toArabic('XI'), 11);
-});
-
-test("XII should return 12", function(){
-	equal(Convert.toArabic('XII'), 12);
-});
-
-test("XIV should return 14", function(){
-	equal(Convert.toArabic('XIV'), 14);
-});
-
-test("XVII should return 17", function(){
-	equal(Convert.toArabic('XVII'), 17);
-});
-
-test("XX should return 20", function(){
-	equal(Convert.toArabic('XX'), 20);
-});
-
-test("XXX should return 30", function(){
-	equal(Convert.toArabic('XXX'), 30);
-});
-
-test("XL should return 40", function(){
-	equal(Convert.toArabic('XL'), 40);
-});
-
-test("IL should return 39", function(){
-	equal(Convert.toArabic('IL'), 39);
-});
-
