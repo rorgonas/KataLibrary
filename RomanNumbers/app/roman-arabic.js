@@ -24,7 +24,7 @@ var Roman = {
 		
 		function addUnit(romanNumber, symbol) {
 			var returnValue = symbolsValue[symbol];
-			returnValue += Roman.toArabic(roman.split(symbol)[1]);
+			returnValue += Roman.toArabic(roman.substring(1));	
 
 			return returnValue;
 		}

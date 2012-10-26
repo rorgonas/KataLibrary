@@ -52,3 +52,11 @@ test("XIV should return 14", function(){
 test("XVII should return 17", function(){
 	equal(Roman.toArabic('XVII'), 17);
 });
+
+test("XX should return 20", function(){
+	equal(Roman.toArabic('XX'), 20);
+});
+
+test("XXX should return 30", function(){
+	equal(Roman.toArabic('XXX'), 30);
+});
