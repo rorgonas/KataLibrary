@@ -17,26 +17,30 @@
 var Roman = {
 
 	toArabic: function(roman){
-		var symbolsValue = {
+		var numerals = {			
+			"V": 5,
 			"X": 10,
-			"V": 5
+			"L": 50,
+			"C": 100,
+			"D": 500,
+			"M": 1000
 		}
 		
 		function addUnit(romanNumber, symbol) {
-			var returnValue = symbolsValue[symbol];
-			returnValue += Roman.toArabic(roman.substring(1));	
+			var returnValue = numerals[symbol];
+			returnValue += Roman.toArabic(romanNumber.substring(1));	
 
 			return returnValue;
 		}
 
-		for (var key in symbolsValue) {
-		  if (symbolsValue.hasOwnProperty(key)) {
+		for (var key in numerals) {
+		  if (numerals.hasOwnProperty(key)) {
 		  	if (roman.match("^" + key)) {
 		  		return addUnit(roman, key);
 		  	}
 
 		  	if (roman.match("^I" + key + "$")) {
-		  		return symbolsValue[key]-1;
+		  		return numerals[key]-1;
 		  	}
 		  }
 		}		

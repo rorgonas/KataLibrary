@@ -17,8 +17,13 @@ test("When I is preceded by another Roman number, substract one unit", function(
 	equal(Roman.toArabic('IX'), 9, "IX should return 9");
 });
 
-test("V should return 5", function(){
-	equal(Roman.toArabic('V'), 5);
+test("Matching all Roman Numerals", function(){
+	equal(Roman.toArabic('V'), 5, "V should return 5");
+	equal(Roman.toArabic('X'), 10, "X should return 10");
+	equal(Roman.toArabic('L'), 50, "L should return 50");
+	equal(Roman.toArabic('C'), 100, "C should return 100");
+	equal(Roman.toArabic('D'), 500, "D should return 500");
+	equal(Roman.toArabic('M'), 1000, "M should return 1000");
 });
 
 test("VI should return 6", function(){
@@ -31,10 +36,6 @@ test("VII should return 7", function(){
 
 test("VIII should return 8", function(){
 	equal(Roman.toArabic('VIII'), 8);
-});
-
-test("X should return 10", function(){
-	equal(Roman.toArabic('X'), 10);
 });
 
 test("XI should return 11", function(){
