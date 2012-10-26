@@ -18,29 +18,14 @@
 var Roman = {
 
 	toArabic: function(roman){
-		var returnValue;
 		var symbolsValue = {
-			"V": 5,
-			"X": 10
+			"X": 10,
+			"V": 5
 		}
-
-		var lessValue = {
-			"IV": 4,
-			"IX": 9
-		}
-
+		
 		function addUnit(romanNumber, symbol) {
-			var returnValue;
-			var numberOfI = 0;
-
-			if (roman.match("^" + symbol)) {
-				returnValue = symbolsValue[symbol];
-				numberOfI = roman.split(symbol)[1].length;
-
-				for(var i = 0; i < numberOfI; i++){
-					returnValue += 1;
-				}
-			}
+			var returnValue = symbolsValue[symbol];
+			returnValue += Roman.toArabic(roman.split(symbol)[1]);
 
 			return returnValue;
 		}
@@ -50,24 +35,12 @@ var Roman = {
 		  	if (roman.match("^" + key)) {
 		  		return addUnit(roman, key);
 		  	}
-		  }
-		}
 
-		// if (roman == "IX"){
-		// 	return 9;
-		// }
-
-		// if (roman == "IV"){
-		// 	return 4;
-		// }
-
-		for (var key in lessValue) {
-		  if (lessValue.hasOwnProperty(key)) {
-		  	if (roman.match("^" + key)) {
-		  		return lessValue[key];
+		  	if (roman.match("^I" + key + "$")) {
+		  		return symbolsValue[key]-1;
 		  	}
 		  }
-		}
+		}		
 
 		return roman.length;
 	}
