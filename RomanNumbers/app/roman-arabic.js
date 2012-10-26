@@ -1,6 +1,6 @@
-// Convert convert Roman numbers into Arabic
+// Convert Roman numbers into Arabic
 
-// Split Roman numbers in units and apply pattern when need
+// Split _Roman numbers in units and apply pattern when need
 
 
 // Symbol	Value
@@ -14,43 +14,61 @@
 
 // ----------------------------------------------------------
 
-var Roman = {
+var Convert = {
+
+	symbols: {			
+
+			"M": 1000,
+			"D": 500,
+			"C": 100,
+			"L": 50,
+			"X": 10,
+			"V": 5,
+			"I": 1
+	},
+
+	subUnit: function(sub_roman, sub_key){
+		
+		var returnValue;
+
+		if (sub_roman.match("^IL")) {
+	  		returnValue = 39;
+	  	}
+
+	  	if (sub_roman.match("^XL")) {
+	  		returnValue = 40;
+	  	}	
+
+	  	if (sub_roman.match("^I" + sub_key + "$")) {
+	  		returnValue = this.symbols[sub_key]-1;
+	  	}
+	  	return returnValue;
+	},
+
+	addUnit: function(add_roman, add_key) {
+		var returnValue = this.symbols[add_key];
+		returnValue += this.toArabic(add_roman.substring(1));	
+		return returnValue;
+	},
 
 	toArabic: function(roman){
-		var numerals = {			
-			"V": 5,
-			"X": 10,
-			"L": 50,
-			"C": 100,
-			"D": 500,
-			"M": 1000
-		}
-		
-		function addUnit(romanNumber, symbol) {
-			var returnValue = numerals[symbol];
-			returnValue += Roman.toArabic(romanNumber.substring(1));	
 
-			return returnValue;
-		}
+		this.subUnit(roman, key);
 
-		for (var key in numerals) {
-		  if (numerals.hasOwnProperty(key)) {
+		for (var key in this.symbols) {
+		  if (this.symbols.hasOwnProperty(key)) {		  		
 
-		  	if (roman.match("^IL")) {
-		  		return 39;
-		  	}
+		  	var key1 = roman.substring(0,1);
+		  	var key2 = roman.substring(2,1);
 
-		  	if (roman.match("^XL")) {
-		  		return 40;
-		  	}	
-
+		  	var val1 = this.symbols[key1];
+		  	var val2 = this.symbols[key2];
+		  	
 		  	if (roman.match("^" + key)) {
-		  		return addUnit(roman, key);
+		  		return this.addUnit(roman, key);
 		  	}
 
-		  	if (roman.match("^I" + key + "$")) {
-		  		return numerals[key]-1;
-		  	}
+		  	console.log(roman + " : " + val1 + "," + val2);
 
 		  }
 		}		
