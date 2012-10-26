@@ -35,6 +35,15 @@ var Roman = {
 
 		for (var key in numerals) {
 		  if (numerals.hasOwnProperty(key)) {
+
+		  	if (roman.match("^IL")) {
+		  		return 39;
+		  	}
+
+		  	if (roman.match("^XL")) {
+		  		return 40;
+		  	}	
+
 		  	if (roman.match("^" + key)) {
 		  		return addUnit(roman, key);
 		  	}
@@ -42,6 +51,7 @@ var Roman = {
 		  	if (roman.match("^I" + key + "$")) {
 		  		return numerals[key]-1;
 		  	}
+
 		  }
 		}		
 

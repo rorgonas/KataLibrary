@@ -61,3 +61,12 @@ test("XX should return 20", function(){
 test("XXX should return 30", function(){
 	equal(Roman.toArabic('XXX'), 30);
 });
+
+test("XL should return 40", function(){
+	equal(Roman.toArabic('XL'), 40);
+});
+
+test("IL should return 39", function(){
+	equal(Roman.toArabic('IL'), 39);
+});
+
