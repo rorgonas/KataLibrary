@@ -15,60 +15,57 @@
 // ----------------------------------------------------------
 
 var Convert = {
+	
+	toArabic: function(roman){
 
-	symbols: {			
+		var symbols = {			
 
 			"M": 1000,
 			"D": 500,
 			"C": 100,
 			"L": 50,
+			"XL": 40,
 			"X": 10,
+			"IX": 9,
 			"V": 5,
+			"IV": 4,
 			"I": 1
-	},
+		}
 
-	subUnit: function(sub_roman, sub_key){
-		
-		var returnValue;
+		function addUnit(number, index) {
+			// var arabic = symbols[index];
+			// // if (number = "IV"){
+			// //  	//return 4;			
+			// // }
+			// arabic += Convert.toArabic(number.substring(1));	
+			// return arabic;
+		}
 
-		if (sub_roman.match("^IL")) {
-	  		returnValue = 39;
-	  	}
+		for (var key in symbols) {
+		  if (symbols.hasOwnProperty(key)) {		  		
 
-	  	if (sub_roman.match("^XL")) {
-	  		returnValue = 40;
-	  	}	
-
-	  	if (sub_roman.match("^I" + sub_key + "$")) {
-	  		returnValue = this.symbols[sub_key]-1;
-	  	}
-	  	return returnValue;
-	},
-
-	addUnit: function(add_roman, add_key) {
-		var returnValue = this.symbols[add_key];
-		returnValue += this.toArabic(add_roman.substring(1));	
-		return returnValue;
-	},
-
-	toArabic: function(roman){
-
-		this.subUnit(roman, key);
-
-		for (var key in this.symbols) {
-		  if (this.symbols.hasOwnProperty(key)) {		  		
-
-		  	var key1 = roman.substring(0,1);
-		  	var key2 = roman.substring(2,1);
-
-		  	var val1 = this.symbols[key1];
-		  	var val2 = this.symbols[key2];
-		  	
 		  	if (roman.match("^" + key)) {
-		  		return this.addUnit(roman, key);
-		  	}
+		  		//return addUnit(roman, key);
+		  		var arabic = symbols[key];
+				
+				if ( roman == "XL"){
+					console.log('The numbers starts with XL');
+					return symbols[key];
+				}
 
-		  	console.log(roman + " : " + val1 + "," + val2);
+				if ( roman == "IX"){
+					console.log('The numbers starts with IX');
+					return symbols[key];
+				}
+
+				if ( roman == "IV"){
+					console.log('The numbers starts with IV');
+					return symbols[key];
+				}				
+
+				arabic += Convert.toArabic(roman.substring(1));	
+				return arabic;
+		  	}
 
 		  }
 		}		

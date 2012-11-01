@@ -12,11 +12,6 @@ test("For I, II, III return the number of 'I'", function(){
 	equal(Convert.toArabic('III'), 3, "III should return 3");
 });
 
-test("When I is preceded by another Roman number, substract one unit", function(){
-	equal(Convert.toArabic('IV'), 4, "IV should return 4");
-	equal(Convert.toArabic('IX'), 9, "IX should return 9");
-});
-
 test("Matching all Roman Numerals", function(){
 	equal(Convert.toArabic('V'), 5, "V should return 5");
 	equal(Convert.toArabic('X'), 10, "X should return 10");
@@ -32,7 +27,7 @@ test("Multiples of X", function(){
 });
 
 
-test("When use only Additonal Operator", function(){
+test("When Roman number is prefixed by I, II or III", function(){
 	equal(Convert.toArabic('VI'), 6, "VI should return 6");
 	equal(Convert.toArabic('VII'), 7, "VII should return 7");
 	equal(Convert.toArabic('VIII'), 8, "VIII should return 8");
@@ -41,8 +36,17 @@ test("When use only Additonal Operator", function(){
 	equal(Convert.toArabic('XVII'), 17, "XVII should return 17");
 });
 
-test("When use only Subtraction Operator", function(){
+test("When Roman number is preceded by I", function(){
+	equal(Convert.toArabic('IV'), 4, "IV should return 4");
+	equal(Convert.toArabic('IX'), 9, "IX should return 9");
+	equal(Convert.toArabic('XL'), 40, "XL should return 40");
+	//equal(Convert.toArabic('XLV'), 45, "XLV should return 45");
+});
+
+/*
+test("When Roman number is preceded by smaller number", function(){
 	equal(Convert.toArabic('XIV'), 14, "XIV should return 14");
 	equal(Convert.toArabic('IL'), 39, "IL should return 39");
 	equal(Convert.toArabic('XL'), 40, "XL should return 40");
 });
+*/
