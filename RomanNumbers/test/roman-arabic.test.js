@@ -36,17 +36,19 @@ test("When Roman number is prefixed by I, II or III", function(){
 	equal(Convert.toArabic('XVII'), 17, "XVII should return 17");
 });
 
-test("When Roman number is preceded by I", function(){
+test("When Roman number is preceded by smaler Roman Number", function(){
 	equal(Convert.toArabic('IV'), 4, "IV should return 4");
 	equal(Convert.toArabic('IX'), 9, "IX should return 9");
 	equal(Convert.toArabic('XL'), 40, "XL should return 40");
-	//equal(Convert.toArabic('XLV'), 45, "XLV should return 45");
+	equal(Convert.toArabic('XC'), 90, "XC should return 90");
+	equal(Convert.toArabic('CD'), 400, "XLV should return 400");
+	equal(Convert.toArabic('CM'), 900, "XLV should return 900");
 });
 
-/*
-test("When Roman number is preceded by smaller number", function(){
+
+test("More complex Roman Numbers", function(){
 	equal(Convert.toArabic('XIV'), 14, "XIV should return 14");
-	equal(Convert.toArabic('IL'), 39, "IL should return 39");
-	equal(Convert.toArabic('XL'), 40, "XL should return 40");
+	equal(Convert.toArabic('XXXIX'), 39, "XXXIX should return 39");
+	equal(Convert.toArabic('CIV'), 104, "CIV should return 104");
+	equal(Convert.toArabic('DXCIX'), 599, "DXLIX should return 599");
 });
-*/

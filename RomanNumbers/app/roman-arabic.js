@@ -20,54 +20,45 @@ var Convert = {
 
 		var symbols = {			
 
-			"M": 1000,
-			"D": 500,
-			"C": 100,
-			"L": 50,
+			"M":  1000,
+			"CM": 900,
+			"D":  500,
+			"CD": 400,
+			"C":  100,
+			"XC": 90,
+			"L":  50,
 			"XL": 40,
-			"X": 10,
+			"X":  10,
 			"IX": 9,
-			"V": 5,
+			"V":  5,
 			"IV": 4,
-			"I": 1
-		}
-
-		function addUnit(number, index) {
-			// var arabic = symbols[index];
-			// // if (number = "IV"){
-			// //  	//return 4;			
-			// // }
-			// arabic += Convert.toArabic(number.substring(1));	
-			// return arabic;
+			"I":  1
 		}
 
 		for (var key in symbols) {
 		  if (symbols.hasOwnProperty(key)) {		  		
 
-		  	if (roman.match("^" + key)) {
-		  		//return addUnit(roman, key);
-		  		var arabic = symbols[key];
-				
-				if ( roman == "XL"){
-					console.log('The numbers starts with XL');
-					return symbols[key];
-				}
+		  	// grab the first Roman symbol
+		  	var arabic = roman.match("^" + key);
 
-				if ( roman == "IX"){
-					console.log('The numbers starts with IX');
-					return symbols[key];
-				}
+		  	if (( arabic == "XL") || ( arabic == "IX") || ( arabic == "IV") || ( arabic == "XC") ||	( arabic == "CD") || ( arabic == "CM")){
+			  		console.log('alternate situation when ' + roman);
+					if (roman.length > 2){
+			  			arabic += Convert.toArabic(roman.substring(2));					
+					}
+					return arabic = symbols[key];
+			}
 
-				if ( roman == "IV"){
-					console.log('The numbers starts with IV');
-					return symbols[key];
-				}				
-
-				arabic += Convert.toArabic(roman.substring(1));	
+		  	if (arabic != null) {
+		  		
+		  		// save his arabic number corespondence
+		  		arabic = symbols[key];
+				arabic += Convert.toArabic(roman.substring(1));				
 				return arabic;
 		  	}
 
 		  }
+
 		}		
 
 		// Remember: This covers the first Test scenario: I, II and III :) 
