@@ -51,4 +51,5 @@ test("More complex Roman Numbers", function(){
 	equal(Convert.toArabic('XXXIX'), 39, "XXXIX should return 39");
 	equal(Convert.toArabic('CIV'), 104, "CIV should return 104");
 	equal(Convert.toArabic('DXCIX'), 599, "DXLIX should return 599");
+	equal(Convert.toArabic('MDXCVIII'), 1598, "MDXCVIII should return 1598");
 });

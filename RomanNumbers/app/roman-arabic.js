@@ -18,8 +18,9 @@ var Convert = {
 	
 	toArabic: function(roman){
 
-		var arabic;
-		var symbols = {			
+		var arabic,
+			digit,
+		 	symbols = {			
 
 			"M":  1000,
 			"CM": 900,
@@ -38,21 +39,18 @@ var Convert = {
 
 		for (var key in symbols) {
 		  if (symbols.hasOwnProperty(key)) {		  		
-
+		  	
 		  	// grab the first Roman symbol
 		  	var symbol = roman.match("^" + key);
 
-		  	if (( symbol == "XL") || ( symbol == "IX") || ( symbol == "IV") || ( symbol == "XC") ||	( symbol == "CD") || ( symbol == "CM")){				
-					arabic = symbols[key];
-					arabic += Convert.toArabic(roman.substring(2));				
-					return arabic;
-			}
+		  	// testing the length of the key (1 or 2) can determine where to cut: substring (1 or 2)
+		  	digit = key.length;
 
 		  	if (symbol != null) {
 		  		
-		  		// save his arabic number corespondence
+		  		// arabic number gets real value
 		  		arabic = symbols[key];
-				arabic += Convert.toArabic(roman.substring(1));				
+				arabic += Convert.toArabic(roman.substring(digit));				
 				return arabic;
 		  	}
 
@@ -60,7 +58,7 @@ var Convert = {
 
 		}		
 
-		// Remember: This covers the first Test scenario: I, II and III :) 
+		// Remember: This always covers the first Test scenario: I, II and III :) 
 		return roman.length;
 	}
 }
