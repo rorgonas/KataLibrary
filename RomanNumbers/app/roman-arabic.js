@@ -18,6 +18,7 @@ var Convert = {
 	
 	toArabic: function(roman){
 
+		var arabic;
 		var symbols = {			
 
 			"M":  1000,
@@ -39,17 +40,15 @@ var Convert = {
 		  if (symbols.hasOwnProperty(key)) {		  		
 
 		  	// grab the first Roman symbol
-		  	var arabic = roman.match("^" + key);
+		  	var symbol = roman.match("^" + key);
 
-		  	if (( arabic == "XL") || ( arabic == "IX") || ( arabic == "IV") || ( arabic == "XC") ||	( arabic == "CD") || ( arabic == "CM")){
-			  		console.log('alternate situation when ' + roman);
-					if (roman.length > 2){
-			  			arabic += Convert.toArabic(roman.substring(2));					
-					}
-					return arabic = symbols[key];
+		  	if (( symbol == "XL") || ( symbol == "IX") || ( symbol == "IV") || ( symbol == "XC") ||	( symbol == "CD") || ( symbol == "CM")){				
+					arabic = symbols[key];
+					arabic += Convert.toArabic(roman.substring(2));				
+					return arabic;
 			}
 
-		  	if (arabic != null) {
+		  	if (symbol != null) {
 		  		
 		  		// save his arabic number corespondence
 		  		arabic = symbols[key];
