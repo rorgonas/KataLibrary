@@ -4,6 +4,7 @@
 * FizzBuzz
 * Roman Numbes
   * Convert Roman into Arabic
+* Calc Statistics
 
 
 Some Theory
