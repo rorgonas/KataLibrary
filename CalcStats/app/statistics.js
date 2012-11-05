@@ -18,23 +18,33 @@
 var Calculate = {
 	
 	Min: function(){
-		console.log(arguments.length);
-		var index,
-			minVal;
+		
+		var minVal;
 
 		if (arguments.length > 0){
 			minVal = arguments[0];
 		}
 
-		// Before using arguments as array we need to convert form Object
+		// Before using arguments as Array we need to convert the Object
 		var arg = Array.prototype.slice.call(arguments);
-		var array_sort = arg.sort();
-		minVal = array_sort[0];
+		var minVal = arg.sort()[0];
 
 		return minVal;
 	},
 
 	Max: function(){
-		return 4;
+		
+		var maxValue;
+
+		if (arguments.length > 0){
+			maxVal = arguments[0];
+		}
+
+		// Before using arguments as Array we need to convert the Object
+		var arg = Array.prototype.slice.call(arguments);
+		var argLength = arg.sort().length -1;
+		var maxVal = arg.sort()[argLength];
+
+		return maxVal;
 	}
 }
