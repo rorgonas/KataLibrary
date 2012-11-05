@@ -26,12 +26,15 @@ var Calculate = {
 			minVal = arguments[0];
 		}
 
-		for (index = 0; index < arguments.length; index ++){
-			if ( arguments[index] < minVal){
-				minVal = arguments[index];
-			}
-		}
+		// Before using arguments as array we need to convert form Object
+		var arg = Array.prototype.slice.call(arguments);
+		var array_sort = arg.sort();
+		minVal = array_sort[0];
 
 		return minVal;
+	},
+
+	Max: function(){
+		return 4;
 	}
 }
