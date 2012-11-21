@@ -51,5 +51,25 @@ var Calculate = {
 	Num: function(){
 		// arguments Object is available only in the function body
 		return arguments.length;
+	},
+
+	Average: function(){
+				
+		var sum = arguments[0];
+		var result;
+
+		 if ( arguments.length > 1){		 
+
+			for (var i = 1; i < arguments.length; i++){
+				sum = sum + arguments[i];
+			};
+			
+			console.log("sum=" + sum);
+			result = sum/arguments.length;
+			
+			return result;
+		}
+
+		return arguments[0];		
 	}
 }

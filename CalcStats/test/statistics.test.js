@@ -6,22 +6,26 @@
 
 // ---------------------------------------------------------------
 
-test("Given array of integer with ONE value return value", function(){
-	equal(Calculate.Min(1), 1);
-	equal(Calculate.Min(2), 2);
+test("Module Minimum value", function(){
+	equal(Calculate.Min(1), 1, "Test when for 1 return 1");
+	equal(Calculate.Min(2), 2, "Test when for 2 return 2");
+	equal(Calculate.Min(2,3,4),2, "Test for a squence of 3");
+	equal(Calculate.Min(2,3,4, 7, 8, 1, -2, 3),-2, "Test for a bigger squence also with negative elements");
 });
 
-test("Given array with more values return smalest integer", function(){
-	equal(Calculate.Min(2,3,4),2);
-	equal(Calculate.Min(2,3,4, 7, 8, 1, -2, 3),-2);
-});
-
-test("Given array with more values return bigest integer", function(){
+test("Module Maximumum value: Given array with more values return bigest integer", function(){
 	equal(Calculate.Max(2,3,4),4);
 	equal(Calculate.Max(2,3,4, 7, 8, 1, -2, 3),8);
 });
 
-test("Given array return number of integers", function(){
+test("Module Number of element in sequence: Given array return number of integers", function(){
 	equal(Calculate.Num(1),1, "Test for one value");
 	equal(Calculate.Num(1,2),2, "Test for two value");
 });
+
+test("Module Avarage value", function(){
+	equal(Calculate.Average(1),1, "Test avarage when sequence has one element");
+	equal(Calculate.Average(1, 3), 2, "Test avarage for 1 and 3 is 2");
+	equal(Calculate.Average(1, 3, 5), 3, "Test avarage for 1,3, 5 is 3");
+
+})
