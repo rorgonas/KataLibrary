@@ -40,11 +40,16 @@ var Calculate = {
 			maxVal = arguments[0];
 		}
 
-		// Before using arguments as Array we need to convert the Object
+		// Before using arguments as Array we need to convert this Object
 		var arg = Array.prototype.slice.call(arguments);
 		var argLength = arg.sort().length -1;
 		var maxVal = arg.sort()[argLength];
 
 		return maxVal;
+	},
+
+	Num: function(){
+		// arguments Object is available only in the function body
+		return arguments.length;
 	}
 }

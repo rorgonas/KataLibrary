@@ -20,3 +20,8 @@ test("Given array with more values return bigest integer", function(){
 	equal(Calculate.Max(2,3,4),4);
 	equal(Calculate.Max(2,3,4, 7, 8, 1, -2, 3),8);
 });
+
+test("Given array return number of integers", function(){
+	equal(Calculate.Num(1),1, "Test for one value");
+	equal(Calculate.Num(1,2),2, "Test for two value");
+});
