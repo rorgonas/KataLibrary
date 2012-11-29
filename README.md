@@ -6,7 +6,7 @@
   * Convert Roman into Arabic
   * Convert Arabic into Roman - ToDo
 * Calc Statistics
-* * LCD Digits
+* LCD Digits
 
 
 Some Theory
