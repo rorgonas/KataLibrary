@@ -6,3 +6,17 @@
 
 // ---------------------------------------------------------------
 
+test("Convert one digit into correspondingLCD Digit", function(){
+	equal(ConvertNumberIntoLCD(0), "._.\n" + 
+								   "|.|\n" + 
+			 					   "|_|", "For 1");
+	equal(ConvertNumberIntoLCD(1), "...\n" + 
+								   "..|\n" + 
+			 					   "..|", "For 2");
+	equal(ConvertNumberIntoLCD(2), "._.\n" + 
+								   "._|\n" + 
+			 					   "|_.", "For 3");
+	equal(ConvertNumberIntoLCD(10), "._.\n" + 
+								   "._|\n" + 
+			 					   "|_.", "For 3");
+})
