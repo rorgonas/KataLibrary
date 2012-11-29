@@ -64,12 +64,13 @@ var Calculate = {
 				sum = sum + arguments[i];
 			};
 			
-			console.log("sum=" + sum);
+			// console.log("sum=" + sum);
 			result = sum/arguments.length;
-			
-			return result;
+		}
+		else{
+			result = arguments[0];
 		}
 
-		return arguments[0];		
+		return result		
 	}
 }

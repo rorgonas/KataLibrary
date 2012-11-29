@@ -25,7 +25,7 @@ test("Module Number of element in sequence: Given array return number of integer
 
 test("Module Avarage value", function(){
 	equal(Calculate.Average(1),1, "Test avarage when sequence has one element");
-	equal(Calculate.Average(1, 3), 2, "Test avarage for 1 and 3 is 2");
-	equal(Calculate.Average(1, 3, 5), 3, "Test avarage for 1,3, 5 is 3");
-
+	equal(Calculate.Average(1, 3), 2, "Test avarage for 1 and 3 is 2");	
+	equal(Calculate.Average(1, 3, 5, 1), 2.5, "Test avarage for 1,3,5, 1 is 2.5");
+	equal(Calculate.Average(-1, 3, 5, 0), 1.75, "Test avarage for -1,3,5, 0 is 1.75");
 })
