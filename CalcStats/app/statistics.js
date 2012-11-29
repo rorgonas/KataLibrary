@@ -49,28 +49,19 @@ var Calculate = {
 	},
 
 	Num: function(){
-		// arguments Object is available only in the function body
-		return arguments.length;
+		return arguments.length || undefined;
 	},
 
 	Average: function(){
 				
-		var sum = arguments[0];
+		var sum = 0; 
 		var result;
 
-		 if ( arguments.length > 1){		 
-
-			for (var i = 1; i < arguments.length; i++){
-				sum = sum + arguments[i];
-			};
-			
-			// console.log("sum=" + sum);
-			result = sum/arguments.length;
-		}
-		else{
-			result = arguments[0];
-		}
-
-		return result		
+		for (var i = 0; i < arguments.length; i++){
+			sum = sum + arguments[i];
+		};
+		result = sum/arguments.length;		
+		
+		return result || undefined;	
 	}
 }

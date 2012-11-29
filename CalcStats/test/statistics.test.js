@@ -6,14 +6,14 @@
 
 // ---------------------------------------------------------------
 
-test("Module Minimum value", function(){
+test("Module Minimum value", function(){	
 	equal(Calculate.Min(1), 1, "Test when for 1 return 1");
 	equal(Calculate.Min(2), 2, "Test when for 2 return 2");
 	equal(Calculate.Min(2,3,4),2, "Test for a squence of 3");
 	equal(Calculate.Min(2,3,4, 7, 8, 1, -2, 3),-2, "Test for a bigger squence also with negative elements");
 });
 
-test("Module Maximumum value: Given array with more values return bigest integer", function(){
+test("Module Maximumum value: Given array with more values return bigest integer", function(){	
 	equal(Calculate.Max(2,3,4),4);
 	equal(Calculate.Max(2,3,4, 7, 8, 1, -2, 3),8);
 });
@@ -29,3 +29,10 @@ test("Module Avarage value", function(){
 	equal(Calculate.Average(1, 3, 5, 1), 2.5, "Test avarage for 1,3,5, 1 is 2.5");
 	equal(Calculate.Average(-1, 3, 5, 0), 1.75, "Test avarage for -1,3,5, 0 is 1.75");
 })
+
+test("When no parameter are passed to the function return Undefined", function(){
+	equal(Calculate.Min(), undefined);
+	equal(Calculate.Max(),undefined);
+	equal(Calculate.Num(), undefined);
+	equal(Calculate.Average(), undefined);
+});
