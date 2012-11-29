@@ -65,3 +65,6 @@ var Calculate = {
 		return result || undefined;	
 	}
 }
+
+// Refactor: Create Calcul Statistics Class
+// ToDo
