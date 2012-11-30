@@ -53,19 +53,20 @@ ConvertIntegerIntoDigit = function(number){
 	// Make array
 	numbers = number.split("");
 
-	if (numbers.length > 1){
-		var number_one = numbers[0];
-		var number_five = numbers[1];
+	for (var i=0; i < numbers.length; i++){
+		
+		number = numbers[i];
 
-		lines[0] = symbols[number_one][0] + " " + symbols[number_five][0];
-		lines[1] = symbols[number_one][1] + " " + symbols[number_five][1];
-		lines[2] = symbols[number_one][2] + " " + symbols[number_five][2];
+		lines[0] += symbols[number][0] + " ";
+		lines[1] += symbols[number][1] + " ";
+		lines[2] += symbols[number][2] + " ";
+
 	}
-	else{
-		lines[0] = lines[0] + symbols[number][0];
-		lines[1] = lines[1] + symbols[number][1];
-		lines[2] = lines[2] + symbols[number][2];
-	}
+
+	// Remove last space from each line
+	lines[0] = lines[0].substring(0, lines[0].length -1);
+	lines[1] = lines[1].substring(0, lines[1].length -1);
+	lines[2] = lines[2].substring(0, lines[2].length -1);
 
 	return lines.join("\n")
 

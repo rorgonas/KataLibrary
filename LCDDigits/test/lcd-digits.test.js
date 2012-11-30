@@ -36,5 +36,9 @@ test("Convert 2 digits in LCD format", function(){
 	equal(ConvertIntegerIntoDigit(15), "... ._.\n" + 
 									   "..| |_.\n" +
 									   "..| ._|", "Return Digit for 15");
+	
+	equal(ConvertIntegerIntoDigit(25), "._. ._.\n" + 
+									   "._| |_.\n" +
+									   "|_. ._|", "Return Digit for 25");
 });
 
