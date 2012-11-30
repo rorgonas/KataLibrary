@@ -50,23 +50,24 @@ ConvertIntegerIntoDigit = function(number){
 	// Convert number into string
 	number = number.toString();
 
-	// Make array
+	// Trandform into an array the number
 	numbers = number.split("");
 
 	for (var i=0; i < numbers.length; i++){
 		
 		number = numbers[i];
-
-		lines[0] += symbols[number][0] + " ";
-		lines[1] += symbols[number][1] + " ";
-		lines[2] += symbols[number][2] + " ";
+		
+		// Build the lines for output
+		for (var idx = 0; idx < 3; idx ++){
+			lines[idx] += symbols[number][idx] + " ";	
+		}
 
 	}
 
-	// Remove last space from each line
-	lines[0] = lines[0].substring(0, lines[0].length -1);
-	lines[1] = lines[1].substring(0, lines[1].length -1);
-	lines[2] = lines[2].substring(0, lines[2].length -1);
+	// Remove space from each line
+	for (var idx = 0; idx < 3; idx ++){
+		lines[idx] = lines[idx].substring(0, lines[idx].length -1);
+	}
 
 	return lines.join("\n")
 
