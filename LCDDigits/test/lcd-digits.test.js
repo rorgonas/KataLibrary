@@ -42,3 +42,14 @@ test("Convert 2 digits in LCD format", function(){
 									   "|_. ._|", "Return Digit for 25");
 });
 
+test("Convert n digits in LCD format", function(){
+	equal(ConvertIntegerIntoDigit(150), "... ._. ._.\n" + 
+									    "..| |_. |.|\n" +
+									    "..| ._| |_|", "Return Digit for 150");
+
+	equal(ConvertIntegerIntoDigit(997), "._. ._. ._.\n" + 
+									    "|_| |_| ..|\n" +
+									    "._| ._| ..|", "Return Digit for 997");
+
+});
+

@@ -42,6 +42,22 @@ ConvertIntegerIntoDigit = function(number){
 
 		"5": ["._.",
 			  "|_.",
+			  "._|"],
+
+		"6": ["._."
+			 ,"|_.",
+			  "|_|"],
+
+		"7": ["._."
+			 ,"..|",
+			  "..|"],
+
+		"8": ["._."
+			 ,"|_|",
+			  "|_|"],
+
+		"9": ["._.",
+			  "|_|",
 			  "._|"]
 	}
 	
@@ -50,14 +66,14 @@ ConvertIntegerIntoDigit = function(number){
 	// Convert number into string
 	number = number.toString();
 
-	// Trandform into an array the number
+	// Transform into an array the number
 	numbers = number.split("");
 
 	for (var i=0; i < numbers.length; i++){
 		
 		number = numbers[i];
 		
-		// Build the lines for output
+		// Build the 3 lines for output
 		for (var idx = 0; idx < 3; idx ++){
 			lines[idx] += symbols[number][idx] + " ";	
 		}
