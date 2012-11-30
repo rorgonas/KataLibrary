@@ -61,30 +61,37 @@ ConvertIntegerIntoDigit = function(number){
 			  "._|"]
 	}
 	
-	var lines = ["", "", ""];
 	
 	// Convert number into string
 	number = number.toString();
 
-	// Transform into an array the number
-	numbers = number.split("");
 
-	for (var i=0; i < numbers.length; i++){
+	var lines = buildLCD();
+	var output = refactorLCD(lines);
+
+	// Build the 3 lines for output
+	function buildLCD(){
 		
-		number = numbers[i];
+		var lines = ["", "", ""]; 		// Init empty array for lines
+		numbers = number.split(""); 	// Transform into an array the number
 		
-		// Build the 3 lines for output
-		for (var idx = 0; idx < 3; idx ++){
-			lines[idx] += symbols[number][idx] + " ";	
+		for (var i=0; i < numbers.length; i++){
+			number = numbers[i];
+			for (var idx = 0; idx < 3; idx ++){
+				lines[idx] += symbols[number][idx] + " ";	
+			}
 		}
-
+		return lines;
+	}
+	
+	// Refactor the output removing space from the end of each line
+	function refactorLCD(lines){
+		for (var idx = 0; idx < 3; idx ++){
+			lines[idx] = lines[idx].substring(0, lines[idx].length -1);
+		}
+		return lines;
 	}
 
-	// Remove space from each line
-	for (var idx = 0; idx < 3; idx ++){
-		lines[idx] = lines[idx].substring(0, lines[idx].length -1);
-	}
-
-	return lines.join("\n")
+	return output.join("\n")
 
 }
