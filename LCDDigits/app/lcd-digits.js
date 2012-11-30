@@ -16,44 +16,24 @@
 
 // ----------------------------------------------------------
 
-ConvertNumberIntoLCD = function(number){
-	
-	var symbols = {
-		
-		"2": "._.\n" + 
-			 "._|\n" + 
-			 "|_.",
-		"1": "...\n" + 
-			 "..|\n" + 
-			 "..|",
-		"0": "._.\n" + 
-			 "|.|\n" + 
-			 "|_|"
-			}
 
-	// Phase one
-	// if (number === 0){
-	// 	console.log(symbols[0]);
-	// 	return symbols[0];
-	// }
-	// if (number === 1){
-	// 	console.log(symbols[1]);
-	// 	return symbols[1];
-	// }
-	// if (number === 2){
-	// 	console.log(symbols[2]);
-	// 	return symbols[2];
-	// }
+ConvertIntegerIntoDigit = function(number){
 
-	// Phase two - refactoring
-	for (var key in symbols){
-		if (symbols.hasOwnProperty(key)) {
-			if (number.toString() == key){
-				console.log(symbols[key]);
-				return symbols[key]
-			}
-		}
+	var symbol = {
+		"0": ["._.","|.|","|_|"],
+		"1": ["...","..|","..|"],
+		"2": ["._.","._|","|_."],
+		"3": ["._.","._|","._|"],
+		"4": ["...","|_|","..|"],
+		"5": ["._.","|_.","._|"]
 	}
+	
+	var lines = ["", "", ""];
 
+	lines[0] = lines[0] + symbol[number][0];
+	lines[1] = lines[1] + symbol[number][1];
+	lines[2] = lines[2] + symbol[number][2];
+
+	return lines.join("\n")
 
 }
