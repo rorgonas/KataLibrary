@@ -4,7 +4,7 @@
 * FizzBuzz
 * Roman Numbes
   * Convert Roman into Arabic
-  * Convert Arabic into Roman - ToDo
+  * Convert Arabic into Roman
 * Calc Statistics
 * LCD Digits
 
