@@ -34,7 +34,7 @@ a {
 }
 
 .source {
-  font-size: 10px; 
+  font-size: 12px; 
 }
 .source a:hover {
   text-decoration: none;
@@ -46,6 +46,11 @@ a {
 		margin-right: auto;
 		max-width: 680px;
 	width: auto;
+}
+
+button {
+  position: absolute;
+  right: 10px;
 }
 
 /* Landscape phone to portrait tablet */
