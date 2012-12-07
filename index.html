@@ -16,6 +16,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
+
 </head>
 	<body>
 		<div id="wrap">
@@ -43,7 +44,7 @@
 								<li><a href="lib/CalcStats/index.html">Calculate Statistics</a></li>
 								<li><a href="lib/LCDDigits/index.html">LCD Digits</a></li>
 								<li class="nav-header">PHP5 & PHPUnit group</li>
-								<li><a href="#">Prime Numbers</a></li>
+								<li><a class="info" href="#" rel="tooltip" data-placement="right" title="run: phpunit test">Prime Numbers</a></li>								
 							</ul>
 						</nav>
 					</aside>
@@ -67,6 +68,13 @@
 				<p class="source"><a href="https://sites.google.com/site/tddproblems/all-problems-1" target="_blank">Use this link for a complex list with TDD problmes</a></p>
 			</div>
 		</footer>
-		
+	
+	<!-- Custom js inclusion: show tooltip when link has .info class -->
+	<script>
+		(function(){
+			$('.info').tooltip('show');
+		})()
+	</script>
+
 	</body>
 </html>
