@@ -4,31 +4,120 @@
 	<meta charset="utf-8">
 	<title>Kata Library</title>
 
-	<style>
-		body{
-			background-color: white;
-			font-family:  Tahoma;	
-			font-size: 100%;	
+	<!-- Turn on Responsive design -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- jQuery lib -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	 <style type="text/css">
+	    
+	 	html,
+	 	body {
+	 		height: 100%;  /* The html and body elements cannot have any padding or margin. */
+	 	}
+	    body {
+	        padding-top: 60px;
+	    }
+
+	    #wrap {
+		    min-height: 90%;
+	        height: auto !important;
+	        height: 100%;
+	        /* Negative indent footer by it's height */
+	        margin: 0 auto -60px;
+	   	}
+	    .sidebar-nav {
+	    	padding: 9px 0;
+	    }
+
+	    /* Set the fixed height of the footer here */
+	    #footer {
+	    	 height: 60px;
+	    	 background-color: #f5f5f5;
+	    }
+
+	    .credit {
+	    	margin: 20px 0;
+	    	color: #999999;
+	    	text-align: center;
+	    }
+
+	    .container {
+   	 		width: auto;
+   	 		margin-left: auto;
+   			margin-right: auto;
+   			max-width: 680px;
+    		width: auto;
 		}
-	</style>
+
+	    /* Landscape phone to portrait tablet */
+     	@media (max-width: 767px) {
+	 
+	        #footer {
+	          margin-left: -20px;
+	          margin-right: -20px;
+	          padding-left: 20px;
+	          padding-right: 20px;
+	        }
+
+	        .row-fluid [class*="span"] {
+	        	float:none;
+	        	width: 100%;
+	        }
+	    }
+    </style>
 	
 </head>
 	<body>
-		<h1>My Kata Library</h1>
-		<section id="js" class="kata-group">
-			<h2>Technology: JavaScript & QUnit</h2>
-			<ul>
-				<li><a href="FizzBuzz/index.html">Fizz Buzz</a></li>
-				<li><a href="RomanNumbers/index.html">Roman Numbers</a></li>
-				<li><a href="CalcStats/index.html">Calculate Statistics</a></li>
-				<li><a href="LCDDigits/index.html">LCD Digits</a></li>
-			</ul>
-		</section>
-		<section id="php" class="kata-group">
-			<h2>Technology: PHP5 & PHPUnit</h2>
-			<ul>
-				<li><a href="PrimeNumber/tests/PrimeNumberTest.php">Prime Numbers</a></li>
-			</ul>
-		</section>
+		<div id="wrap">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						<a class="brand" href="#">My Kata Library</a>
+					</div>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<aside class="span3">
+						<!-- Aside Nav here -->
+						<nav class="well sidebar-nav">
+							<ul class="nav nav-list">
+								<li class="nav-header">JavaScript & QUnit group</li>
+								<li><a href="lib/FizzBuzz/index.html">Fizz</a></li>
+								<li><a href="lib/RomanNumbers/index.html">Roman Numbers</a></li>
+								<li><a href="lib/CalcStats/index.html">Calculate Statistics</a></li>
+								<li><a href="lib/LCDDigits/index.html">LCD Digits</a></li>
+								<li class="nav-header">PHP5 & PHPUnit group</li>
+								<li><a href="#">Prime Numbers</a></li>
+							</ul>
+						</nav>
+					</aside>
+					<section class="span9">
+						<!-- Main Contain here-->
+						<h1>Unit Testing</h1>
+						<p>The 3 laws of TDD - Test Drive Development paradigm</p>
+						<ul>
+							<li>You are not allowed to write any production code "unless" it is to make a failing test pass</li>
+							<li>You are not allowed to write any more of unit test than is "suficient to fail"</li>
+							<li>You are not allowed to write any more production code than is "suficient to pass" one failing test</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div> <!-- #wrap -->
+
+		<footer id="footer">
+			<div class="container">
+				<p class="credit">Template powered by <a href="http://twitter.github.com/bootstrap/index.html">Boostrap</a> &copy;2012 - TDD Kata Library</p>
+			</div>
+		</footer>
+		
 	</body>
 </html>
