@@ -56,13 +56,16 @@ For example:
 	<script>
 		(function(){
 			
+			function getBaseUrl(home){
+				var URI = document.baseURI, 		//location.href
+					getIndex = URI.indexOf('lib'),
+					kataRoot = URI.substring(0, getIndex) + home;
+				return kataRoot;
+			}
 
 			$('button').click(function(){
-				var URI = document.baseURI; //location.href
-				var getIndex = URI.indexOf('lib');
-				var kataRoot = URI.substring(0, getIndex) + "index.html";
-				window.location = kataRoot;
-
+				var home = "index.html";
+				window.location = getBaseUrl(home);
 			});
 		})()
 	</script>
