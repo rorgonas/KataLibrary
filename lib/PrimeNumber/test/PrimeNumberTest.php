@@ -16,14 +16,14 @@ require_once 'app/PrimeNumber.php';
 class PrimeNumberTest extends PHPUnit_Framework_TestCase
 {
 
-	private function actualNumber($num){
-		/*
+	private function actualNumber($number){
+		/**
 		 * Some sort of Singleton Pattern implementation: 
 		 * create only one instance of PrimeNumber class
 		 */
 
-		$number = new PrimeNumber;
-		$result = $number->getPrimes($num);
+		$number = new PrimeNumber($number);
+		$result = $number->getPrimes();
 		return $result;
 	}  
 	
