@@ -2,7 +2,7 @@
 	
 class PrimeNumber
 {
-	public function addMultiplesOfDivisor(&$number, $value, &$primes)
+	private function addMultiplesOfDivisor(&$number, $value, &$primes)
 	{
 		while ($number % $value === 0) {
 			array_push($primes, $value);

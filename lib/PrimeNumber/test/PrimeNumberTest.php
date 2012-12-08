@@ -16,17 +16,19 @@ require_once 'app/PrimeNumber.php';
 class PrimeNumberTest extends PHPUnit_Framework_TestCase
 {
 
-	public function getOneInstanceObj(){
+	private function getOneInstanceObj($num){
 		// some sort of Singleton Pattern implementation: create only one instance of PrimeNumber class
-		$oneObj = new PrimeNumber;
-		return $oneObj;
-	}
-
+		$oneNumberObj = new PrimeNumber;
+		$result = $oneNumberObj->calcul($num);
+		return $result;
+	}  
+	
 	public function testTwoShouldReturnTwo()
 	{
-		$this->assertEquals($this->getOneInstanceObj()->calcul(2), array(2));
+		//$reference = $this->getOneInstanceObj();
+		$this->assertEquals($this->getOneInstanceObj(2), array(2));
 	}
-
+/*
 	public function testThreeShouldReturnThree()
 	{
 		$this->assertEquals($this->getOneInstanceObj()->calcul(3), array(3));
@@ -86,7 +88,7 @@ class PrimeNumberTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertEquals($this->getOneInstanceObj()->calcul(8877), array(3,11,269));
 	}
-
+*/
 
 }
 
