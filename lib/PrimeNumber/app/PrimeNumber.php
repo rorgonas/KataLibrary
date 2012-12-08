@@ -10,7 +10,7 @@ class PrimeNumber
 		}
 	}
 	
-	public function calcul($number)
+	public function getPrimes($number)
 	{
 		$primes = array();
 		
