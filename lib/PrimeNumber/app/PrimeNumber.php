@@ -1,18 +1,21 @@
 <?php
 	
-	
-	function addMultiplesOfDivisor(&$number, $value, &$primes){
+class PrimeNumber
+{
+	public function addMultiplesOfDivisor(&$number, $value, &$primes)
+	{
 		while ($number % $value === 0) {
 			array_push($primes, $value);
 			$number = $number / $value;
 		}
 	}
 	
-	function prime($number){
+	public function calcul($number)
+	{
 		$primes = array();
 		
 		for ($value = 2; $value < $number; $value++) {
-			addMultiplesOfDivisor($number, $value, $primes);
+			$this->addMultiplesOfDivisor($number, $value, $primes);
 		}
 		
 		if ($number > 1) {
@@ -21,5 +24,6 @@
 
 		return $primes;
 	}
+}
 
 ?>
