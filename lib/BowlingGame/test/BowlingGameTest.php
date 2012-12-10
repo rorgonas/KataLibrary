@@ -3,6 +3,7 @@
 
 /**
  * Bowling Game kata
+ * @author Rolland Orgonas I.
  */
 
 
