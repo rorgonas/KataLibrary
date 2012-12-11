@@ -17,6 +17,7 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 
 	public function __construct()
 	{
+		// Create one instance of the BowlingGame Class
 		$this->game = new BowlingGame;
 	}
 
@@ -28,18 +29,25 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 	public function testOneRoll()
 	{
 		$this->assertEquals($this->game->score(array(1)), 1);
-		$this->assertEquals($this->game->score(Array(5)),5);
+		$this->assertEquals($this->game->score(array(5)),5);
 	}
 
 	public function testOneFrame()
 	{
-		$this->assertEquals($this->game->score(Array(2,3)),5);
+		$this->assertEquals($this->game->score(array(2,3)),5);
 	}
 
-	public function testTwoFrames()
-	{
-		$this->assertEquals($this->game->score(Array(1,2,3,4)),10);
+	public function testTwoFramesWithSeconFrameEmpty(){
+		$this->assertEquals($this->game->score(array(1,2), array()),3);
 	}
+
+	public function testTwoFrames(){
+		$this->assertEquals($this->game->score(array(1,2), array(3,4)),10);
+	}
+
+	// public function testThreeFrames(){
+	// 	$this->assertEquals($this->game->score(array(2,4,0,6,1,2)),15);
+	// }
 
 
 }
