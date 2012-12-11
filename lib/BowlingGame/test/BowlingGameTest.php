@@ -32,24 +32,26 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($this->game->score(array(5)),5);
 	}
 
-	public function testOneFrame()
+	public function testOneTurn()
 	{
 		$this->assertEquals($this->game->score(array(2,3)),5);
 	}
 
-	public function testTwoFramesWithSeconFrameEmpty(){
+	public function testTwoTurnsWithSecondEmpty(){
 		$this->assertEquals($this->game->score(array(1,2), array()),3);
 	}
 
-	public function testTwoFrames(){
+	public function testTwoTurns(){
 		$this->assertEquals($this->game->score(array(1,2), array(3,4)),10);
 	}
 
-	// public function testThreeFrames(){
-	// 	$this->assertEquals($this->game->score(array(2,4,0,6,1,2)),15);
-	// }
+	public function testThreeTurns(){
+		//$expected = array(array(1,2), array(3,4), array());
+		$this->assertEquals($this->game->score(array(1,2), array(3,4), array()),10);
+		$this->assertEquals($this->game->score(array(1,2), array(3,4), array(2,2)),14);
+	}
 
-
+	
 }
 
 

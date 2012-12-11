@@ -7,31 +7,26 @@ class BowlingGame
 		// no need for now
 	}
 
-	public function score($rolls1 = NULL, $rolls2 = NULL) 
+	public function score($rolls1 = array(0), $rolls2 = array(0), $rolls3 = array(0)) 
 	{
-		$score = 0;
-		
-		if (!isset($rolls1)){
-			$rolls1 = array(0);
-		}
-
-		if (!isset($rolls2)){
-			$rolls2 = array(0);
-		}
-		
-		$frames = array(
-			array($rolls1), 
-			array($rolls2)
+		$score = array();		
+		$turns = array(
+			array('roll'=> $rolls1, 'score'=>'0'), 
+			array('roll' => $rolls2, 'score'=>'0'),
+			array('roll'=> $rolls3, 'score' =>'0')
 			);
 
-		foreach($rolls1 as $value){
-				$score += $value;
-		}
+		for ($i = 0; $i < count($turns); $i++){
 
-		foreach($rolls2 as $value){
-				$score += $value;
+			$rolls = $turns[$i]['roll'];
+			foreach($rolls as $value){
+					//$score += $value;
+					$turns[$i]['score'] += $value;
+					$score[$i] = $turns[$i]['score'];
+			}
+
 		}
-		return $score;
+		return array_sum($score);
 	}
 
 
