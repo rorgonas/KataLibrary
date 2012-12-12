@@ -52,6 +52,10 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($this->game->score(array(2,8,3,1)),17);
 	}
 
+	public function testASpareInTheMiddle()
+	{
+		$this->assertEquals($this->game->score(array(2,3,3,7,1,4)),21);
+	}
 
 	
 }
