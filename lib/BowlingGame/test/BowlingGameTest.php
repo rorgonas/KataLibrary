@@ -24,37 +24,37 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 
 	public function testEmptyRoll()
 	{
-		$this->assertEquals($this->game->score(),0);
+		$this->assertEquals($this->game->roll(),0);
 	}
 
 	public function testOneRoll()
 	{
-		$this->assertEquals($this->game->score(array(1)),1);
+		$this->assertEquals($this->game->roll(array(1)),1);
 	}
 
 	public function testOneFrame()
 	{
-		$this->assertEquals($this->game->score(array(2,4)),6);
+		$this->assertEquals($this->game->roll(array(2,4)),6);
 	}
 
 	public function testOneIncompleteFrame()
 	{
-		$this->assertEquals($this->game->score(array(2,4,2)),6);
+		$this->assertEquals($this->game->roll(array(2,4,2)),6);
 	}
 
 	public function testSecondIncompleteFrame()
 	{
-		$this->assertEquals($this->game->score(array(2,4,2,1,0)),9);
+		$this->assertEquals($this->game->roll(array(2,4,2,1,0)),9);
 	}
 
 	public function testASpare()
 	{
-		$this->assertEquals($this->game->score(array(2,8,3,1)),17);
+		$this->assertEquals($this->game->roll(array(2,8,3,1)),17);
 	}
 
 	public function testASpareInTheMiddle()
 	{
-		$this->assertEquals($this->game->score(array(2,3,3,7,1,4)),21);
+		$this->assertEquals($this->game->roll(array(2,3,3,7,1,4)),21);
 	}
 
 	

@@ -3,7 +3,7 @@
 class BowlingGame
 {
 	
-	public function score($rolls = array(0)) 
+	public function roll($rolls = array(0)) 
 	{
 		$roll_count = count($rolls);
 		$rolls_to_count = $rolls;
