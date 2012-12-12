@@ -4,9 +4,11 @@
 * FizzBuzz
 * Roman Numbes
   * Convert Roman into Arabic
-  * Convert Arabic into Roman
+  * Convert Arabic into Roman - not ready
 * Calc Statistics
 * LCD Digits
+* Bowling Game - in progress
+* Overlapping Rectangles - not ready
 
 
 Unit Testing
