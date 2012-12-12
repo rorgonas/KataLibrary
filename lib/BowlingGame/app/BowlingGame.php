@@ -2,31 +2,30 @@
 
 class BowlingGame
 {
-	public function __construct()
+	
+	public function score($roll = array(0)) 
 	{
-		// no need for now
-	}
-
-	public function score($rolls1 = array(0), $rolls2 = array(0), $rolls3 = array(0)) 
-	{
-		$score = array();		
-		$turns = array(
-			array('roll'=> $rolls1, 'score'=>'0'), 
-			array('roll' => $rolls2, 'score'=>'0'),
-			array('roll'=> $rolls3, 'score' =>'0')
-			);
-
-		for ($i = 0; $i < count($turns); $i++){
-
-			$rolls = $turns[$i]['roll'];
-			foreach($rolls as $value){
-					//$score += $value;
-					$turns[$i]['score'] += $value;
-					$score[$i] = $turns[$i]['score'];
+		$roll_count = count($roll);
+		
+		if ( $roll_count > 1){
+			$spare_count = $roll[0] + $roll[1];
+			
+			if ( $spare_count == 10){
+				// spare
+				$next_frame_count = $roll[2] + $roll[3];
+				return $spare_count + $roll[2] + $next_frame_count;
 			}
-
 		}
-		return array_sum($score);
+
+		if (($roll_count % 2 != 0) && ($roll_count > 1)){
+			$complete_rolls = array_slice($roll, 0, $roll_count-1);
+			return array_sum($complete_rolls);
+		}
+
+
+		
+		
+		return array_sum($roll);
 	}
 
 
