@@ -112,9 +112,9 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(30, $this->game->roll(array(2,8,10,0)));
 	}
 
-	public function testAllStrike()
+	public function testAllFrameAreStrikes()
 	{
-		//$this->assertEquals(30, $this->game->roll(array(10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0)));
+		$this->assertEquals(300, $this->game->roll(array(10,10,10,10,10,10,10,10,10,10)));
 	}
 
 }
