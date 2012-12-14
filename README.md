@@ -1,14 +1,17 @@
  Kata Library
 ==============
 
-* FizzBuzz
-* Roman Numbes
+ 
+JAVASCRIPT & QUNIT GROUP
+* Fizz
+* Roman Numbers
   * Convert Roman into Arabic
-  * Convert Arabic into Roman - not ready
-* Calc Statistics
+* Calculate Statistics
 * LCD Digits
-* Bowling Game - in progress
-* Overlapping Rectangles - not ready
+
+PHP5 & PHPUNIT GROUP
+* Prime Numbers
+* Bowling Game (status: in progress)
 
 
 Unit Testing
