@@ -22,16 +22,6 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->game = new BowlingGame;
 	}
 
-	public function testEmptyRoll()
-	{
-		$this->assertEquals($this->game->roll(),0);
-	}
-
-	public function testOneEmptyRoll()
-	{
-		$this->assertEquals($this->game->roll(array()),0);
-	}
-
 	public function testOneRoll()
 	{
 		$this->assertEquals(1, $this->game->roll(array(1)));
