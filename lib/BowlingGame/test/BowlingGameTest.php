@@ -68,6 +68,21 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 	}
 
 	
+	public function testOneStrikeAndOneRoll()
+	{
+		$this->assertEquals(22, $this->game->roll(array(10,0,3,3)));
+	}
+
+	public function testOneRollAndOneStrike()
+	{
+		$this->assertEquals(16, $this->game->roll(array(3,3,10,0)));
+	}
+
+	public function testThreeStrikes()
+	{
+		$this->assertEquals(50, $this->game->roll(array(10,0,10,0,10,0)));
+	}
+	
 }
 
 
