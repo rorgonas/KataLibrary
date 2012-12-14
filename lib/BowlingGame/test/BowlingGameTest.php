@@ -27,34 +27,54 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($this->game->roll(),0);
 	}
 
+	public function testOneEmptyRoll()
+	{
+		$this->assertEquals($this->game->roll(array()),0);
+	}
+
 	public function testOneRoll()
 	{
-		$this->assertEquals($this->game->roll(array(1)),1);
+		$this->assertEquals(1, $this->game->roll(array(1)));
 	}
 
 	public function testOneFrame()
 	{
-		$this->assertEquals($this->game->roll(array(2,4)),6);
+		$this->assertEquals(6, $this->game->roll(array(2,4)));
 	}
 
 	public function testOneIncompleteFrame()
 	{
-		$this->assertEquals($this->game->roll(array(2,4,2)),6);
+		$this->assertEquals(6, $this->game->roll(array(2,4,2)));
 	}
 
 	public function testSecondIncompleteFrame()
 	{
-		$this->assertEquals($this->game->roll(array(2,4,2,1,0)),9);
+		$this->assertEquals(9, $this->game->roll(array(2,4,2,1,0)));
 	}
 
-	public function testASpare()
+	public function testOneSpare()
 	{
-		$this->assertEquals($this->game->roll(array(2,8,3,1)),17);
+		$this->assertEquals(17, $this->game->roll(array(2,8,3,1)));
 	}
 
-	public function testASpareInTheMiddle()
+	public function testTurnSpareTurn()
 	{
-		$this->assertEquals($this->game->roll(array(2,3,3,7,1,4)),21);
+		$this->assertEquals(21, $this->game->roll(array(2,3,3,7,1,4)));
+	}
+
+	public function testOneTurnAndOneSpare()
+	{
+		$this->assertEquals(15, $this->game->roll(array(2,3,3,7)));
+	}
+
+	public function testOneTurnTwoSparesOneTurn()
+	{
+		$this->assertEquals(38, $this->game->roll(array(2,3,5,5,6,4,1,5)));
+	}
+
+	public function testOneTurnTwoSparesOneRoll()
+	{
+		$this->assertEquals(32, $this->game->roll(array(2,3,5,5,6,4,1)));
 	}
 
 	
