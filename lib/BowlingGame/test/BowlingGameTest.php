@@ -67,7 +67,6 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(32, $this->game->roll(array(2,3,5,5,6,4,1)));
 	}
 
-	
 	public function testOneStrikeAndOneRoll()
 	{
 		$this->assertEquals(22, $this->game->roll(array(10,0,3,3)));
@@ -82,7 +81,42 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase
 	{
 		$this->assertEquals(50, $this->game->roll(array(10,0,10,0,10,0)));
 	}
+
+	public function testIllegalStrikePoint()
+	{
+		$this->assertEquals(10, $this->game->roll(array(10,10)));
+	}
+
+	public function testIllegalStrikePointAndOneStrike()
+	{
+		$this->assertEquals(30, $this->game->roll(array(10,10,10,0)));
+	}
+
+	public function testIllegalStrikePointAndIncompleteFrame()
+	{
+		$this->assertEquals(20, $this->game->roll(array(10,10,10)));
+	}
 	
+	public function testOneStrikeOneSpare()
+	{
+		$this->assertEquals(30, $this->game->roll(array(10,0,5,5)));
+	}
+
+	public function testOneStrikeOneSpareAndIncompleteFrame()
+	{
+		$this->assertEquals(32, $this->game->roll(array(10,0,5,5,2)));
+	}
+
+	public function testOneSpareOneStrike()
+	{
+		$this->assertEquals(30, $this->game->roll(array(2,8,10,0)));
+	}
+
+	public function testAllStrike()
+	{
+		//$this->assertEquals(30, $this->game->roll(array(10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0,10,0)));
+	}
+
 }
 
 

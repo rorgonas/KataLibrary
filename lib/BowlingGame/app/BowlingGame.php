@@ -20,9 +20,12 @@ class BowlingGame
 		for($i = 0; $i < $roll_count; $i += 2){			
 
 			$current = $rolls[$i];
-			// Strike
+			// Strike situation
 			if ($current == 10){											
 
+				if (isset($rolls[$i+1]) && $rolls[$i+1] == 10){
+					$rolls[$i+1] = 0;
+				}
 				if(isset($rolls[$i+2])){
 					$this->collectPoints($rolls[$i+2]);
 				}
@@ -30,12 +33,12 @@ class BowlingGame
 					$this->collectPoints($rolls[$i+3]);
 				}	
 			}
-
-			// Spare
+			
 			elseif (isset($rolls[$i+1])){
 				$next = $rolls[$i+1];
 				$spare_count = $current + $next;
 				
+				// Spare situation
 				if ( $spare_count == 10){			
 					if(isset($rolls[$i+2])){
 						$this->collectPoints($rolls[$i+2]);
