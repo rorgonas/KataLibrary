@@ -16,88 +16,78 @@ require_once 'app/PrimeNumber.php';
 class PrimeNumberTest extends PHPUnit_Framework_TestCase
 {
 
-	private function actualNumber($num){
-		/**
-		 * Some sort of Singleton Pattern implementation: 
-		 * create only one instance of PrimeNumber class
-		 */
+	public $number; 
 
-		$number = new PrimeNumber;
-		$result = $number->getPrimes($num);
-		return $result;
-	}  
-	
+	public function setup() {
+			$this->number = new PrimeNumber;
+	}
+
 	public function testTwoShouldReturnTwo()
 	{
-		$this->assertEquals($this->actualNumber(2), array(2));
+		
+		$this->assertEquals(array(2), $this->number->getPrimes(2));
 	}
 
 	public function testThreeShouldReturnThree()
 	{
-		$this->assertEquals($this->actualNumber(3), array(3));
+		$this->assertEquals(array(3), $this->number->getPrimes(3));
 	}
 
 	public function testFourShouldReturnTwoTwo()
 	{
-		$this->assertEquals($this->actualNumber(4), array(2,2));
+		$this->assertEquals(array(2,2), $this->number->getPrimes(4));
 	}
 
 	public function testFiveShouldReturnFive()
 	{
-		$this->assertEquals($this->actualNumber(5), array(5));
+		$this->assertEquals(array(5), $this->number->getPrimes(5));
 	}
 
 	public function testSixShouldReturnTwoThree()
 	{
-		$this->assertEquals($this->actualNumber(6), array(2,3));
+		$this->assertEquals(array(2,3), $this->number->getPrimes(6));
 	}
 
 	public function testEightShouldReturnTwoTwoTwo()
 	{
-		$this->assertEquals($this->actualNumber(8), array(2,2,2));
+		$this->assertEquals(array(2,2,2), $this->number->getPrimes(8));
 	}
 
 	public function testNineShouldReturnThreeThree()
 	{
-		$this->assertEquals($this->actualNumber(9), array(3,3));
+		$this->assertEquals(array(3,3), $this->number->getPrimes(9));
 	}
 
 	public function testTwentySevenShouldReturnThreeThreeThree()
 	{
-		$this->assertEquals($this->actualNumber(27), array(3,3,3));
+		$this->assertEquals(array(3,3,3), $this->number->getPrimes(27));
 	}
 
 	public function testTwentyFiveShouldReturnFiveFive()
 	{
-		$this->assertEquals($this->actualNumber(25), array(5,5));
+		$this->assertEquals(array(5,5), $this->number->getPrimes(25));
 	}
 
 	public function testFortyEightShouldReturnTwoTwoTwoTwoThree()
 	{
-		$this->assertEquals($this->actualNumber(48), array(2,2,2,2,3));
+		$this->assertEquals(array(2,2,2,2,3), $this->number->getPrimes(48));
 	}
 
 	public function testFortyNineShouldReturnSevenSeven()
 	{
-		$this->assertEquals($this->actualNumber(49), array(7,7));
+		$this->assertEquals(array(7,7), $this->number->getPrimes(49));
 	}
 
 	public function test121ShouldReturnElevenEleven()
 	{
-		$this->assertEquals($this->actualNumber(121), array(11,11));
+		$this->assertEquals(array(11,11), $this->number->getPrimes(121));
 	}
 
 	public function test8877ShouldReturn3x11x269()
 	{
-		$this->assertEquals($this->actualNumber(8877), array(3,11,269));
+		$this->assertEquals(array(3,11,269), $this->number->getPrimes(8877));
 	}
-
 
 }
 
-
-
-
-
-
- ?>
+?>

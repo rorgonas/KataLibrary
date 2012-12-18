@@ -2,30 +2,30 @@
 	
 class PrimeNumber
 {
-	private $primes = array();
+	private $prime_list = array();
+	private $number;
 
-	private function addMultiplesOfDivisor(&$number, $value, &$primes)
+	private function addMultiplesOfDivisor($divisor)
 	{
-		while ($number % $value === 0) {
-			array_push($primes, $value);
-			$number = $number / $value;
+		while ($this->number % $divisor === 0) 
+		{
+			// Start building prime number list
+			$this->number = $this->number / $divisor;			
+			array_push($this->prime_list, $divisor);  			
 		}
 	}
 	
-	public function getPrimes($number)
+	public function getPrimes($n)
 	{
 
-		$primes = $this->primes;
-		
-		for ($value = 2; $value < $number; $value++) {
-			$this->addMultiplesOfDivisor($number, $value, $primes);
-		}
-		
-		if ($number > 1) {
-			array_push($primes, $number);
-		}
+		$this->number = $n;
 
-		return $primes;
+		for ($value = 2; $value <= $this->number; $value++) 
+		{
+			$this->addMultiplesOfDivisor($value);
+		}
+		
+		return $this->prime_list;
 	}
 }
 
