@@ -18,7 +18,7 @@ class PrimeNumberTest extends PHPUnit_Framework_TestCase
 
 	public $number; 
 
-	public function setup() {
+	public function setUp() {
 			$this->number = new PrimeNumber;
 	}
 
