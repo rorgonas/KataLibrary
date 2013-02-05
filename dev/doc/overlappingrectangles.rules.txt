@@ -1,0 +1,9 @@
+Description
+
+Design a rectangle abstraction that supports the following operations:
+
+- Constructed by parameters xmin, ymin, xmax and ymax (what happens if xmin is larger or equal to xmax? You decide what feels most natural..)
+- Computing the Area and Circumference of the rectangle
+- Checking if a rectangle overlaps another rectangles (does that mean they share points on the outline or inside? TDD is about design - so you decide!)
+
+To run the Unit test you need to use: <code>phpunit</code> command from comand line.

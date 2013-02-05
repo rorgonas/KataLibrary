@@ -53,6 +53,12 @@ button {
   right: 10px;
 }
 
+.home {
+  display: block;
+  float: right;
+  margin-top: 14px;
+}
+
 /* Landscape phone to portrait tablet */
 	@media (max-width: 767px) {
 
