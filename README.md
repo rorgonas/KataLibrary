@@ -2,10 +2,9 @@
 ==============
 
 
- Code: JavaScript
- ----------------
- Tool: QUnit
- -----------
+ -------------------------------
+  Code: JavaScript | Tool: QUnit
+ -------------------------------
 
 * Fizz
 * Roman Numbers
@@ -13,11 +12,9 @@
 * Calculate Statistics
 * LCD Digits
 
-<p>
- Code: PHP5
- Tool: PHPUnit
- Plugin: VisualPHPUnit
-</p>
+ --------------------------------------------------
+ Code: PHP5 | Tool: PHPUnit | Plugin: VisualPHPUnit
+ --------------------------------------------------
 
 * Prime Numbers
 * Bowling Game (status: in progress)
