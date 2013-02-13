@@ -1,10 +1,11 @@
  Kata Library
 ==============
 
-<p> 
+
  Code: JavaScript
+ ----------------
  Tool: QUnit
-</p>
+ -----------
 
 * Fizz
 * Roman Numbers
