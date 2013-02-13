@@ -3,8 +3,7 @@
 
  
 Code: JavaScript
-Lobrary: QUnit
-==============
+Library: QUnit
 
 * Fizz
 * Roman Numbers
@@ -12,10 +11,10 @@ Lobrary: QUnit
 * Calculate Statistics
 * LCD Digits
 
-code: PHP5
+Code: PHP5
 Library: PHPUnit
 Plugin: VisualPHPUnit
-====================
+
 * Prime Numbers
 * Bowling Game (status: in progress)
 
