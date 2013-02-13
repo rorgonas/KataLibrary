@@ -2,14 +2,20 @@
 ==============
 
  
-JAVASCRIPT & QUNIT GROUP
+Code: JavaScript
+Lobrary: QUnit
+==============
+
 * Fizz
 * Roman Numbers
   * Convert Roman into Arabic
 * Calculate Statistics
 * LCD Digits
 
-PHP5 & PHPUNIT GROUP
+code: PHP5
+Library: PHPUnit
+Plugin: VisualPHPUnit
+====================
 * Prime Numbers
 * Bowling Game (status: in progress)
 
@@ -27,6 +33,6 @@ The 3 laws of TDD - Test Drive Development paradigm
   Wikipedia: http://en.wikipedia.org/wiki/Test-driven_development
 </p>
 
-<strong>TEKCraft - 2012 </strong>
+<strong>2012-2013&comp;TEKCraft </strong>
 
 
