@@ -1,9 +1,10 @@
  Kata Library
 ==============
 
- 
-Code: JavaScript
-Library: QUnit
+<p> 
+ Code: JavaScript
+ Tool: QUnit
+</p>
 
 * Fizz
 * Roman Numbers
@@ -11,9 +12,11 @@ Library: QUnit
 * Calculate Statistics
 * LCD Digits
 
-Code: PHP5
-Library: PHPUnit
-Plugin: VisualPHPUnit
+<p>
+ Code: PHP5
+ Tool: PHPUnit
+ Plugin: VisualPHPUnit
+</p>
 
 * Prime Numbers
 * Bowling Game (status: in progress)
