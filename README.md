@@ -1,10 +1,5 @@
  Kata Library
-==============
-
-
- -------------------------------
-  Code: JavaScript | Tool: QUnit
- -------------------------------
+=============
 
 * Fizz
 * Roman Numbers
@@ -12,13 +7,17 @@
 * Calculate Statistics
 * LCD Digits
 
+--------------------------------------------------
+ Code: JavaScript | Tool: QUnit
  --------------------------------------------------
- Code: PHP5 | Tool: PHPUnit | Plugin: VisualPHPUnit
- --------------------------------------------------
+ 
 
 * Prime Numbers
 * Bowling Game (status: in progress)
 
+--------------------------------------------------
+ Code: PHP5 | Tool: PHPUnit | Plugin: VisualPHPUnit
+ --------------------------------------------------
 
 Unit Testing
 ============
@@ -33,6 +32,6 @@ The 3 laws of TDD - Test Drive Development paradigm
   Wikipedia: http://en.wikipedia.org/wiki/Test-driven_development
 </p>
 
-<strong>2012-2013&comp;TEKCraft </strong>
+<strong>TEKcraft Game 2012-2013 ©Teksytems</strong>
 
 
